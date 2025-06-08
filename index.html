@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GEOWisata Kota Bekasi</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-fullscreen@1.0.2/dist/leaflet.fullscreen.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine@3.2.12/dist/leaflet-routing-machine.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Poppins:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-easybutton@2/src/easy-button.css">
+    
+</head>
+<body>
+    <header id="home" class="hero">
+        <div class="overlay"></div>
+        <nav>
+            <div class="logo">
+                <i class="fas fa-map-marked-alt"></i>
+                <a href="index.html" style="color: white;"><span>GEOWisata</span></a>
+            </div>
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">Beranda</a></li>
+                <li><a href="#info">Informasi</a></li>
+                <li><a href="#map-section">Peta</a></li>
+                <li><a href="#about">Tentang</a></li>
+                <li><a href="#contact">Kontak</a></li>
+            </ul>
+        </nav>
+        <div class="hero-content">
+            <h1>Peta Wisata Kota Bekasi</h1>
+            <p>Jelajahi berbagai destinasi wisata menarik di Kota Bekasi</p>
+            <a href="#map-section" class="btn-primary">Lihat Peta</a>
+        </div>
+    </header>
+
+    <section id="info" class="info-section">
+        <div class="container">
+            <h2>Persebaran Wisata di Kota Bekasi</h2>
+            <p class="section-description">Kota Bekasi memiliki beragam destinasi wisata yang tersebar di berbagai wilayah. Dari wisata alam yang asri, tempat rekreasi keluarga yang menyenangkan, pusat belanja modern, hingga situs bersejarah yang kaya akan nilai edukasi.</p>
+            
+            <div class="category-cards">
+                <div class="category-card">
+                    <div class="card-icon">
+                        <i class="fas fa-tree"></i>
+                    </div>
+                    <h3>Wisata Alam & Taman</h3>
+                    <p>Nikmati keindahan alam dan ruang terbuka hijau di Bekasi seperti Hutan Kota Patriot, Taman Kota Bekasi, dan berbagai situ yang menyegarkan.</p>
+                </div>
+                
+                <div class="category-card">
+                    <div class="card-icon">
+                        <i class="fas fa-water"></i>
+                    </div>
+                    <h3>Wisata Buatan & Rekreasi Keluarga</h3>
+                    <p>Berbagai waterpark, arena bermain, dan pusat rekreasi keluarga seperti Go! Wet Waterpark, Trans Snow World, dan wahana permainan lainnya.</p>
+                </div>
+                
+                <div class="category-card">
+                    <div class="card-icon">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                    <h3>Wisata Belanja & Kuliner</h3>
+                    <p>Dari mall modern seperti Summarecon Mall hingga pasar tradisional dan pusat kuliner malam yang menggugah selera.</p>
+                </div>
+                
+                <div class="category-card">
+                    <div class="card-icon">
+                        <i class="fas fa-place-of-worship"></i>
+                    </div>
+                    <h3>Wisata Religi</h3>
+                    <p>Kunjungi tempat ibadah bersejarah seperti Masjid Agung Al-Barkah, Klenteng Hok Lay Kiong, dan berbagai rumah ibadah lainnya.</p>
+                </div>
+                
+                <div class="category-card">
+                    <div class="card-icon">
+                        <i class="fas fa-landmark"></i>
+                    </div>
+                    <h3>Wisata Sejarah & Edukasi</h3>
+                    <p>Pelajari sejarah dan budaya Bekasi melalui museum, gedung bersejarah, dan pusat edukasi seperti Gedung Juang 45 dan Museum Digital Patriot.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="map-section" class="map-section">
+        <div class="container">
+            <h2>Peta Persebaran Wisata di Kota Bekasi</h2>
+            <p class="section-description">Gunakan peta interaktif di bawah ini untuk menemukan lokasi wisata di Kota Bekasi. Klik pada marker untuk melihat detail dan mendapatkan rute menuju lokasi.</p>
+        </div>
+        <div class="map-container-wrapper">
+            <div id="map"></div>
+         
+            <div id="route-control" class="hidden">
+                <button id="close-route"><i class="fas fa-times"></i> Tutup Rute</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="about-section">
+        <div class="container">
+            <h2>Tentang Saya</h2>
+            <div class="about-content">
+                <div class="about-image">
+                    <img src="foto/DSC_46901.jpg" alt="Profile Image">
+                </div>
+                <div class="about-text">
+                    <h3>Daffa Rana Kusuma</h3>
+                    <p>Saya adalah seorang pengembang WebGIS yang berfokus pada visualisasi data spasial untuk sektor pariwisata. Dengan latar belakang di bidang Sistem Informasi Geografis dan pengalaman dalam pengembangan web, saya menciptakan aplikasi peta interaktif yang membantu wisatawan menemukan dan menjelajahi destinasi menarik.</p>
+                    <p>Proyek Peta Wisata Kota Bekasi ini dibuat untuk membantu masyarakat dan wisatawan menemukan berbagai destinasi wisata menarik di Kota Bekasi dengan mudah, lengkap dengan informasi dan rute menuju lokasi.</p>
+                    <div class="skills">
+                        <span>WebGIS</span>
+                        <span>Frontend Development</span>
+                        <span>UI/UX Design</span>
+                        <span>Spatial Analysis</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h2>Hubungi Saya</h2>
+            <p class="section-description">Punya pertanyaan atau ingin berkolaborasi? Jangan ragu untuk menghubungi saya.</p>
+            
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h3>Email</h3>
+                            <p>daffarnksm@gmail.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h3>Telepon</h3>
+                            <p>+62 881024543040</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h3>Lokasi</h3>
+                            <p>Kota Bekasi, Jawa Barat, Indonesia</p>
+                        </div>
+                    </div>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/daffarnksm?" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://x.com/daffarksm" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.instagram.com/daffarnksm" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com/in/daffa-kusuma-52826a36a/" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                
+                <form class="contact-form">
+                    <div class="form-group">
+                        <label for="name">Nama</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Pesan</label>
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn-primary">Kirim Pesan</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <i class="fas fa-map-marked-alt"></i>
+                    <span>Bekasi Tourism</span>
+                </div>
+                <p>&copy; 2025 Peta Wisata Kota Bekasi. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/leaflet-fullscreen@1.0.2/dist/Leaflet.fullscreen.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet-easybutton@2/src/easy-button.js"></script>
+    <script src="https://unpkg.com/leaflet-routing-machine@3.2.12/dist/leaflet-routing-machine.js"></script>
+    <script src="geojson-data.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
