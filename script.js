@@ -232,7 +232,7 @@ function createRoute(lat, lng) {
     if (routingControl) {
         map.removeControl(routingControl);
     }
-    
+
     routingControl = L.Routing.control({
         waypoints: [
             L.latLng(userLocation[0], userLocation[1]),
@@ -255,9 +255,18 @@ function createRoute(lat, lng) {
             ]
         }
     }).addTo(map);
-    
+
+    // 👇 Tambahkan event listener DI SINI setelah routingControl dibuat
+    routingControl.on('routesfound', function() {
+        const container = document.querySelector('.leaflet-routing-container');
+        if (container) {
+            container.style.marginTop = '60px';
+        }
+    });
+
     document.getElementById('route-control').classList.remove('hidden');
 }
+
 
 // Initialize navigation (mobile menu toggle)
 function initNavigation() {
