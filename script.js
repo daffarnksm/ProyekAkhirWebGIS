@@ -90,7 +90,7 @@ function initMap() {
         .then(geojsonData => {
             const batasAdmin = L.geoJSON(geojsonData, {
                 style: {
-                    color: "#000",
+                    color: "#ff5733",
                     weight: 2,
                     fillOpacity: 0
                 },
